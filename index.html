@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Landing-Page-Gardens-of-Distinction</title>
+  <style>
+    body {
+      background-color: #091f2e;
+      color: #ffffff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .hero {
+      perspective: 1000px;
+      margin-top: 10vh;
+      width: 90%;
+      max-width: 600px;
+    }
+    .card {
+      background-color: #0d3a52;
+      padding: 40px;
+      border-radius: 8px;
+      transform-style: preserve-3d;
+      transition: transform 0.1s ease-out;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+    .card h1 {
+      color: #58b8d4;
+      margin-top: 0;
+      transform: translateZ(50px);
+    }
+    .card p {
+      transform: translateZ(30px);
+      line-height: 1.5;
+    }
+    .tech {
+      margin-top: 20px;
+      font-size: 0.9em;
+      color: #58b8d4;
+      transform: translateZ(20px);
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #58b8d4;
+      color: #091f2e;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      transform: translateZ(40px);
+    }
+    @media (max-width: 600px) {
+      .card { padding: 20px; }
+      .card h1 { font-size: 1.5em; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="card" id="card">
+      <h1>Landing-Page-Gardens-of-Distinction</h1>
+      <p>a frontend application solving state management and ui rendering complexities. it handles asynchronous data fetching and displays it in a responsive layout. the code focuses on component reusability and strict typing.</p>
+      <p class="tech">html, css, javascript, typescript, frontend frameworks</p>
+      <a href="https://github.com/ZiadtahaM/Landing-Page-Gardens-of-Distinction" class="btn">View Source</a>
+    </div>
+  </div>
+  <script>
+    const card = document.getElementById('card');
+    document.addEventListener('mousemove', (e) => {
+      const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+      const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+      card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+    });
+  </script>
+</body>
+</html>
